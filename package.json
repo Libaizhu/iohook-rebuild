@@ -15,6 +15,9 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
+    "build:abi99": "chcp 65001 && node build.js --runtime electron --version 16.2.8 --abi 99 --upload=false",
+    "build:abi116": "chcp 65001 && node build.js --runtime electron --version 26.6.10 --abi 116 --upload=false",
+    "build:abi118": "chcp 65001 && node build.js --runtime electron --version 27.3.11 --abi 118 --upload=false",
     "install": "",
     "build": "node build.js --upload=false",
     "build:ci": "node build.js --all",

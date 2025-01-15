@@ -6,8 +6,21 @@
 runtime：electron/node 构建electron版本或者node版本
 version: electron或node版本号
 abi：构建的Electron/node的[ABI](https://nodejs.org/en/docs/guides/abi-stability)版本
+
+
+build.js：144行
+
 ```json
+# node版本：16.17.0，npm版本：8.15.0，node-gyp版本：10.2.0，msvs_version版本：2017，python：3.11.3
+# 支持到electron@26.6.10
+>>
+npm run build:abi99
+or
 node build.js --runtime electron --version 16.2.8 --abi 99 --upload=false
+
+npm run build:abi116
+or
+node build.js --runtime electron --version 26.6.10 --abi 116 --upload=false
 ```
 
 

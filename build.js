@@ -82,7 +82,7 @@ function initBuild() {
         return build(runtime, version, abi);
       })
       .then(function () {
-        return tarGz(runtime, abi);
+        return tarGz(runtime, abi, version);
       })
       .catch((err) => {
         console.error(err);
@@ -194,7 +194,7 @@ function build(runtime, version, abi) {
   });
 }
 
-function tarGz(runtime, abi) {
+function tarGz(runtime, abi, version) {
   const FILES_TO_ARCHIVE = {
     win32: ['build/Release/iohook.node', 'build/Release/uiohook.dll'],
     linux: ['build/Release/iohook.node', 'build/Release/uiohook.so'],
@@ -206,6 +206,8 @@ function tarGz(runtime, abi) {
     '-' +
     runtime +
     '-v' +
+    version +
+    '-abi' +
     abi +
     '-' +
     process.platform +
